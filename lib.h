@@ -18,13 +18,14 @@ struct muestras
 
 struct musica
 {
+    uint32_t cantidad;
     struct encabezado *header;
     struct muestras *data;
 };
 
-void llenar_datos(struct musica *s, uint32_t *c, FILE *f);
+void llenar_datos(struct musica *s, FILE *f);
 
-void escribir_nombres(struct musica s, uint32_t c);
+void escribir_nombres(struct musica s);
 
 void elegir_cancion(struct musica s, int(*reproducir)(uint32_t, uint32_t, float *));
 

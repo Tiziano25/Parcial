@@ -11,11 +11,10 @@ int main(int argc, char const *argv[])
     }
     
     struct musica sounds;
-    uint32_t cant;
-    llenar_datos(&sounds, &cant, f);
+    llenar_datos(&sounds, f);
 
     //Punto 1
-    escribir_nombres(sounds, cant);
+    escribir_nombres(sounds);
     
     //Punto 2
     elegir_cancion(sounds, play_audio);
@@ -24,7 +23,7 @@ int main(int argc, char const *argv[])
     guardar_cancion(sounds);
 
     //Libacion de memoria
-    for (uint32_t i = 0; i < cant; i++)
+    for (uint32_t i = 0; i < sounds.cantidad; i++)
     {
         free(sounds.data[i].sound_data);
     }
