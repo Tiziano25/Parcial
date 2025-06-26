@@ -14,7 +14,13 @@ int main(int argc, char const *argv[])
     uint32_t cant;
     llenar_datos(&header, &data, &cant, f);
 
+    printf("Nombres de las canciones:\n");
+    for (uint32_t i = 0; i < cant; i++)
+    {
+        printf("Cancion %u: %s\n", (i+1), header[i].sound_name);
+    }
     
+
     for (uint32_t i = 0; i < cant; i++)
     {
         free(data[i].sound_data);
