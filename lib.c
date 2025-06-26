@@ -11,7 +11,6 @@ void llenar_datos(struct musica *s, FILE *f)
     do
     {
         fread(&s->cantidad, sizeof(uint32_t), 1, f);
-        printf("Cantidad: %u\n", (*s).cantidad);
         s->header = malloc(sizeof(struct encabezado) * (*s).cantidad);
         fread(s->header, sizeof(struct encabezado), (*s).cantidad, f);
         s->data = malloc(sizeof(struct muestras) * (*s).cantidad);
