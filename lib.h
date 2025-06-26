@@ -14,3 +14,5 @@ struct muestras
 {
     float *sound_data;
 };
+
+void llenar_datos(struct encabezado **h, struct muestras **d, uint32_t *c, FILE *f);
